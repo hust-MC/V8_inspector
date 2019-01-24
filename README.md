@@ -1,4 +1,3 @@
-# android-v8-demo
+# Android v8 Inspect
 
-一个将v8嵌入android的demo。
-"# V8_inspector" 
+将V8嵌入了Android App中，并且V8支持chrome devTools的inspect功能
