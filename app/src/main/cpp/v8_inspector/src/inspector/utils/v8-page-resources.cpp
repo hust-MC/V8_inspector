@@ -27,7 +27,7 @@ PageResource::PageResource(std::string filePath, std::string mimeType)
 std::map<std::string, v8_inspector::utils::PageResource> PageResource::getPageResources() {
     auto result = std::map<std::string, v8_inspector::utils::PageResource>();
     tns::JEnv env;
-    jclass inspectorClass = env.FindClass("com/example/zhanfang/test/V8Inspector");
+    jclass inspectorClass = env.FindClass("com/emercy/v8/V8Inspector");
     assert(inspectorClass != nullptr);
 
     jclass pairClass = env.FindClass("android/util/Pair");

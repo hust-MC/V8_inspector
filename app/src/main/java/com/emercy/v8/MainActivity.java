@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.view.View;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,11 +34,10 @@ public class MainActivity extends Activity {
         findViewById(R.id.bt_run_js).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Toast.makeText(MainActivity.this, "运行成功", Toast.LENGTH_LONG).show();
 
                 V8.scheduleBreak();
-                V8.require("/data/data/com.emercy.test/files/app/console.js");
+                V8.require("/data/data/com.emercy.v8/files/app/console.js");
 
             }
         });

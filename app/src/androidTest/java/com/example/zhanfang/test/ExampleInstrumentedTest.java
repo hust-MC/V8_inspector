@@ -1,4 +1,4 @@
-package com.example.zhanfang.test;
+package com.emercy.v8;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.zhanfang.test", appContext.getPackageName());
+        assertEquals("com.emercy.v8", appContext.getPackageName());
     }
 }

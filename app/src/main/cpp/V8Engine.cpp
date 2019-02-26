@@ -13,7 +13,7 @@ v8::Platform* platform_;
 v8::Isolate *mIsolate;
 v8::Persistent<v8::Context> mPersistentContext;
 
-extern "C" JNIEXPORT void JNICALL Java_com_example_zhanfang_test_V8_initV8(
+extern "C" JNIEXPORT void JNICALL Java_com_emercy_v8_V8_initV8(
         JNIEnv *env,
         jobject /* this */) {
     // Initialize V8.
@@ -52,7 +52,7 @@ extern "C" JNIEXPORT void JNICALL Java_com_example_zhanfang_test_V8_initV8(
     InspectorClient::GetInstance()->init();
 }
 
-extern "C" void JNIEXPORT Java_com_example_zhanfang_test_V8_require(
+extern "C" void JNIEXPORT Java_com_emercy_v8_V8_require(
         JNIEnv *env, jobject obj, jstring filePath) {
     auto isolate = mIsolate;
     v8::Isolate::Scope isolate_scope(isolate);
@@ -84,32 +84,32 @@ extern "C" void JNIEXPORT Java_com_example_zhanfang_test_V8_require(
     return;
 }
 
-extern "C" void JNIEXPORT Java_com_example_zhanfang_test_V8_init(JNIEnv *env, jobject object) {
+extern "C" void JNIEXPORT Java_com_emercy_v8_V8_init(JNIEnv *env, jobject object) {
     InspectorClient::GetInstance()->init();
 }
 
-extern "C" JNIEXPORT void Java_com_example_zhanfang_test_V8_connect(JNIEnv *env, jobject instance, jobject connection) {
+extern "C" JNIEXPORT void Java_com_emercy_v8_V8_connect(JNIEnv *env, jobject instance, jobject connection) {
     InspectorClient::GetInstance()->connect(connection);
 }
 
-extern "C" JNIEXPORT void Java_com_example_zhanfang_test_V8_waitForFrontend(JNIEnv *env, jobject instance, jobject connection) {
+extern "C" JNIEXPORT void Java_com_emercy_v8_V8_waitForFrontend(JNIEnv *env, jobject instance, jobject connection) {
     InspectorClient::GetInstance()->waitForFrontend();
 }
 
-extern "C" JNIEXPORT void Java_com_example_zhanfang_test_V8_scheduleBreak(JNIEnv *env, jobject instance) {
+extern "C" JNIEXPORT void Java_com_emercy_v8_V8_scheduleBreak(JNIEnv *env, jobject instance) {
     InspectorClient::GetInstance()->scheduleBreak();
 }
 
-extern "C" JNIEXPORT void Java_com_example_zhanfang_test_V8_disconnect(JNIEnv *env, jobject instance) {
+extern "C" JNIEXPORT void Java_com_emercy_v8_V8_disconnect(JNIEnv *env, jobject instance) {
     InspectorClient::GetInstance()->disconnect();
 }
 
-extern "C" JNIEXPORT void Java_com_example_zhanfang_test_V8_dispatchMessage(JNIEnv *env, jobject instance, jstring jMessage) {
+extern "C" JNIEXPORT void Java_com_emercy_v8_V8_dispatchMessage(JNIEnv *env, jobject instance, jstring jMessage) {
     std::string message = ArgConverter::jstringToString(jMessage);
     InspectorClient::GetInstance()->dispatchMessage(message);
 }
 
-extern "C" JNIEXPORT jstring JNICALL Java_com_example_zhanfang_test_V8_stringFromJNI(JNIEnv *env, jobject /* this */) {
+extern "C" JNIEXPORT jstring JNICALL Java_com_emercy_v8_V8_stringFromJNI(JNIEnv *env, jobject /* this */) {
     std::string hello = "Hello v8 from C++!\n";
 
     v8::Isolate::Scope isolate_scope(mIsolate);
@@ -138,7 +138,7 @@ extern "C" JNIEXPORT jstring JNICALL Java_com_example_zhanfang_test_V8_stringFro
     return env->NewStringUTF(hello.c_str());
 }
 
-extern "C" JNIEXPORT jstring JNICALL Java_com_example_zhanfang_test_V8_stringFromJNI2(JNIEnv *env, jobject /* this */) {
+extern "C" JNIEXPORT jstring JNICALL Java_com_emercy_v8_V8_stringFromJNI2(JNIEnv *env, jobject /* this */) {
     std::string hello = "\n\n";
 
     v8::Isolate::Scope isolate_scope(mIsolate);

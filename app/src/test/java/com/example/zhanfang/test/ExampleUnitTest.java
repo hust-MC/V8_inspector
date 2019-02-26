@@ -1,4 +1,4 @@
-package com.example.zhanfang.test;
+package com.emercy.v8;
 
 import org.junit.Test;
 

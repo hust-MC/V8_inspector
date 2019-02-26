@@ -23,7 +23,7 @@ InspectorClient::InspectorClient(v8::Isolate* isolate)
           isConnected(false) {
     JEnv env;
 
-    inspectorClass = env.FindClass("com/example/zhanfang/test/V8Inspector");
+    inspectorClass = env.FindClass("com/emercy/v8/V8Inspector");
     assert(inspectorClass != nullptr);
 
     sendMethod = env.GetStaticMethodID(inspectorClass, "send", "(Ljava/lang/Object;Ljava/lang/String;)V");
